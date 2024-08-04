@@ -21,6 +21,7 @@ mixin _$ChatScreenEvent {
     required TResult Function() fetchListChat,
     required TResult Function(ChatModel chatModel) newChat,
     required TResult Function(String eventName) subscribeEvent,
+    required TResult Function() cancelEvent,
     required TResult Function(String eventName, SocketModel data)
         handleSocketEvent,
     required TResult Function(ChatModel chatModel) sendChat,
@@ -31,6 +32,7 @@ mixin _$ChatScreenEvent {
     TResult? Function()? fetchListChat,
     TResult? Function(ChatModel chatModel)? newChat,
     TResult? Function(String eventName)? subscribeEvent,
+    TResult? Function()? cancelEvent,
     TResult? Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult? Function(ChatModel chatModel)? sendChat,
   }) =>
@@ -40,6 +42,7 @@ mixin _$ChatScreenEvent {
     TResult Function()? fetchListChat,
     TResult Function(ChatModel chatModel)? newChat,
     TResult Function(String eventName)? subscribeEvent,
+    TResult Function()? cancelEvent,
     TResult Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult Function(ChatModel chatModel)? sendChat,
     required TResult orElse(),
@@ -50,6 +53,7 @@ mixin _$ChatScreenEvent {
     required TResult Function(_FetchListChat value) fetchListChat,
     required TResult Function(_NewChat value) newChat,
     required TResult Function(_ListenSocketEvent value) subscribeEvent,
+    required TResult Function(_CancelEvent value) cancelEvent,
     required TResult Function(_HandleSocketEvent value) handleSocketEvent,
     required TResult Function(_SendChat value) sendChat,
   }) =>
@@ -59,6 +63,7 @@ mixin _$ChatScreenEvent {
     TResult? Function(_FetchListChat value)? fetchListChat,
     TResult? Function(_NewChat value)? newChat,
     TResult? Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult? Function(_CancelEvent value)? cancelEvent,
     TResult? Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult? Function(_SendChat value)? sendChat,
   }) =>
@@ -68,6 +73,7 @@ mixin _$ChatScreenEvent {
     TResult Function(_FetchListChat value)? fetchListChat,
     TResult Function(_NewChat value)? newChat,
     TResult Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult Function(_CancelEvent value)? cancelEvent,
     TResult Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult Function(_SendChat value)? sendChat,
     required TResult orElse(),
@@ -134,6 +140,7 @@ class _$FetchListChatImpl implements _FetchListChat {
     required TResult Function() fetchListChat,
     required TResult Function(ChatModel chatModel) newChat,
     required TResult Function(String eventName) subscribeEvent,
+    required TResult Function() cancelEvent,
     required TResult Function(String eventName, SocketModel data)
         handleSocketEvent,
     required TResult Function(ChatModel chatModel) sendChat,
@@ -147,6 +154,7 @@ class _$FetchListChatImpl implements _FetchListChat {
     TResult? Function()? fetchListChat,
     TResult? Function(ChatModel chatModel)? newChat,
     TResult? Function(String eventName)? subscribeEvent,
+    TResult? Function()? cancelEvent,
     TResult? Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult? Function(ChatModel chatModel)? sendChat,
   }) {
@@ -159,6 +167,7 @@ class _$FetchListChatImpl implements _FetchListChat {
     TResult Function()? fetchListChat,
     TResult Function(ChatModel chatModel)? newChat,
     TResult Function(String eventName)? subscribeEvent,
+    TResult Function()? cancelEvent,
     TResult Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult Function(ChatModel chatModel)? sendChat,
     required TResult orElse(),
@@ -175,6 +184,7 @@ class _$FetchListChatImpl implements _FetchListChat {
     required TResult Function(_FetchListChat value) fetchListChat,
     required TResult Function(_NewChat value) newChat,
     required TResult Function(_ListenSocketEvent value) subscribeEvent,
+    required TResult Function(_CancelEvent value) cancelEvent,
     required TResult Function(_HandleSocketEvent value) handleSocketEvent,
     required TResult Function(_SendChat value) sendChat,
   }) {
@@ -187,6 +197,7 @@ class _$FetchListChatImpl implements _FetchListChat {
     TResult? Function(_FetchListChat value)? fetchListChat,
     TResult? Function(_NewChat value)? newChat,
     TResult? Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult? Function(_CancelEvent value)? cancelEvent,
     TResult? Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult? Function(_SendChat value)? sendChat,
   }) {
@@ -199,6 +210,7 @@ class _$FetchListChatImpl implements _FetchListChat {
     TResult Function(_FetchListChat value)? fetchListChat,
     TResult Function(_NewChat value)? newChat,
     TResult Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult Function(_CancelEvent value)? cancelEvent,
     TResult Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult Function(_SendChat value)? sendChat,
     required TResult orElse(),
@@ -292,6 +304,7 @@ class _$NewChatImpl implements _NewChat {
     required TResult Function() fetchListChat,
     required TResult Function(ChatModel chatModel) newChat,
     required TResult Function(String eventName) subscribeEvent,
+    required TResult Function() cancelEvent,
     required TResult Function(String eventName, SocketModel data)
         handleSocketEvent,
     required TResult Function(ChatModel chatModel) sendChat,
@@ -305,6 +318,7 @@ class _$NewChatImpl implements _NewChat {
     TResult? Function()? fetchListChat,
     TResult? Function(ChatModel chatModel)? newChat,
     TResult? Function(String eventName)? subscribeEvent,
+    TResult? Function()? cancelEvent,
     TResult? Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult? Function(ChatModel chatModel)? sendChat,
   }) {
@@ -317,6 +331,7 @@ class _$NewChatImpl implements _NewChat {
     TResult Function()? fetchListChat,
     TResult Function(ChatModel chatModel)? newChat,
     TResult Function(String eventName)? subscribeEvent,
+    TResult Function()? cancelEvent,
     TResult Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult Function(ChatModel chatModel)? sendChat,
     required TResult orElse(),
@@ -333,6 +348,7 @@ class _$NewChatImpl implements _NewChat {
     required TResult Function(_FetchListChat value) fetchListChat,
     required TResult Function(_NewChat value) newChat,
     required TResult Function(_ListenSocketEvent value) subscribeEvent,
+    required TResult Function(_CancelEvent value) cancelEvent,
     required TResult Function(_HandleSocketEvent value) handleSocketEvent,
     required TResult Function(_SendChat value) sendChat,
   }) {
@@ -345,6 +361,7 @@ class _$NewChatImpl implements _NewChat {
     TResult? Function(_FetchListChat value)? fetchListChat,
     TResult? Function(_NewChat value)? newChat,
     TResult? Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult? Function(_CancelEvent value)? cancelEvent,
     TResult? Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult? Function(_SendChat value)? sendChat,
   }) {
@@ -357,6 +374,7 @@ class _$NewChatImpl implements _NewChat {
     TResult Function(_FetchListChat value)? fetchListChat,
     TResult Function(_NewChat value)? newChat,
     TResult Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult Function(_CancelEvent value)? cancelEvent,
     TResult Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult Function(_SendChat value)? sendChat,
     required TResult orElse(),
@@ -446,6 +464,7 @@ class _$ListenSocketEventImpl implements _ListenSocketEvent {
     required TResult Function() fetchListChat,
     required TResult Function(ChatModel chatModel) newChat,
     required TResult Function(String eventName) subscribeEvent,
+    required TResult Function() cancelEvent,
     required TResult Function(String eventName, SocketModel data)
         handleSocketEvent,
     required TResult Function(ChatModel chatModel) sendChat,
@@ -459,6 +478,7 @@ class _$ListenSocketEventImpl implements _ListenSocketEvent {
     TResult? Function()? fetchListChat,
     TResult? Function(ChatModel chatModel)? newChat,
     TResult? Function(String eventName)? subscribeEvent,
+    TResult? Function()? cancelEvent,
     TResult? Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult? Function(ChatModel chatModel)? sendChat,
   }) {
@@ -471,6 +491,7 @@ class _$ListenSocketEventImpl implements _ListenSocketEvent {
     TResult Function()? fetchListChat,
     TResult Function(ChatModel chatModel)? newChat,
     TResult Function(String eventName)? subscribeEvent,
+    TResult Function()? cancelEvent,
     TResult Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult Function(ChatModel chatModel)? sendChat,
     required TResult orElse(),
@@ -487,6 +508,7 @@ class _$ListenSocketEventImpl implements _ListenSocketEvent {
     required TResult Function(_FetchListChat value) fetchListChat,
     required TResult Function(_NewChat value) newChat,
     required TResult Function(_ListenSocketEvent value) subscribeEvent,
+    required TResult Function(_CancelEvent value) cancelEvent,
     required TResult Function(_HandleSocketEvent value) handleSocketEvent,
     required TResult Function(_SendChat value) sendChat,
   }) {
@@ -499,6 +521,7 @@ class _$ListenSocketEventImpl implements _ListenSocketEvent {
     TResult? Function(_FetchListChat value)? fetchListChat,
     TResult? Function(_NewChat value)? newChat,
     TResult? Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult? Function(_CancelEvent value)? cancelEvent,
     TResult? Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult? Function(_SendChat value)? sendChat,
   }) {
@@ -511,6 +534,7 @@ class _$ListenSocketEventImpl implements _ListenSocketEvent {
     TResult Function(_FetchListChat value)? fetchListChat,
     TResult Function(_NewChat value)? newChat,
     TResult Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult Function(_CancelEvent value)? cancelEvent,
     TResult Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult Function(_SendChat value)? sendChat,
     required TResult orElse(),
@@ -530,6 +554,133 @@ abstract class _ListenSocketEvent implements ChatScreenEvent {
   @JsonKey(ignore: true)
   _$$ListenSocketEventImplCopyWith<_$ListenSocketEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CancelEventImplCopyWith<$Res> {
+  factory _$$CancelEventImplCopyWith(
+          _$CancelEventImpl value, $Res Function(_$CancelEventImpl) then) =
+      __$$CancelEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CancelEventImplCopyWithImpl<$Res>
+    extends _$ChatScreenEventCopyWithImpl<$Res, _$CancelEventImpl>
+    implements _$$CancelEventImplCopyWith<$Res> {
+  __$$CancelEventImplCopyWithImpl(
+      _$CancelEventImpl _value, $Res Function(_$CancelEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CancelEventImpl implements _CancelEvent {
+  const _$CancelEventImpl();
+
+  @override
+  String toString() {
+    return 'ChatScreenEvent.cancelEvent()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CancelEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchListChat,
+    required TResult Function(ChatModel chatModel) newChat,
+    required TResult Function(String eventName) subscribeEvent,
+    required TResult Function() cancelEvent,
+    required TResult Function(String eventName, SocketModel data)
+        handleSocketEvent,
+    required TResult Function(ChatModel chatModel) sendChat,
+  }) {
+    return cancelEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchListChat,
+    TResult? Function(ChatModel chatModel)? newChat,
+    TResult? Function(String eventName)? subscribeEvent,
+    TResult? Function()? cancelEvent,
+    TResult? Function(String eventName, SocketModel data)? handleSocketEvent,
+    TResult? Function(ChatModel chatModel)? sendChat,
+  }) {
+    return cancelEvent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchListChat,
+    TResult Function(ChatModel chatModel)? newChat,
+    TResult Function(String eventName)? subscribeEvent,
+    TResult Function()? cancelEvent,
+    TResult Function(String eventName, SocketModel data)? handleSocketEvent,
+    TResult Function(ChatModel chatModel)? sendChat,
+    required TResult orElse(),
+  }) {
+    if (cancelEvent != null) {
+      return cancelEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchListChat value) fetchListChat,
+    required TResult Function(_NewChat value) newChat,
+    required TResult Function(_ListenSocketEvent value) subscribeEvent,
+    required TResult Function(_CancelEvent value) cancelEvent,
+    required TResult Function(_HandleSocketEvent value) handleSocketEvent,
+    required TResult Function(_SendChat value) sendChat,
+  }) {
+    return cancelEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchListChat value)? fetchListChat,
+    TResult? Function(_NewChat value)? newChat,
+    TResult? Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult? Function(_CancelEvent value)? cancelEvent,
+    TResult? Function(_HandleSocketEvent value)? handleSocketEvent,
+    TResult? Function(_SendChat value)? sendChat,
+  }) {
+    return cancelEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchListChat value)? fetchListChat,
+    TResult Function(_NewChat value)? newChat,
+    TResult Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult Function(_CancelEvent value)? cancelEvent,
+    TResult Function(_HandleSocketEvent value)? handleSocketEvent,
+    TResult Function(_SendChat value)? sendChat,
+    required TResult orElse(),
+  }) {
+    if (cancelEvent != null) {
+      return cancelEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CancelEvent implements ChatScreenEvent {
+  const factory _CancelEvent() = _$CancelEventImpl;
 }
 
 /// @nodoc
@@ -619,6 +770,7 @@ class _$HandleSocketEventImpl implements _HandleSocketEvent {
     required TResult Function() fetchListChat,
     required TResult Function(ChatModel chatModel) newChat,
     required TResult Function(String eventName) subscribeEvent,
+    required TResult Function() cancelEvent,
     required TResult Function(String eventName, SocketModel data)
         handleSocketEvent,
     required TResult Function(ChatModel chatModel) sendChat,
@@ -632,6 +784,7 @@ class _$HandleSocketEventImpl implements _HandleSocketEvent {
     TResult? Function()? fetchListChat,
     TResult? Function(ChatModel chatModel)? newChat,
     TResult? Function(String eventName)? subscribeEvent,
+    TResult? Function()? cancelEvent,
     TResult? Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult? Function(ChatModel chatModel)? sendChat,
   }) {
@@ -644,6 +797,7 @@ class _$HandleSocketEventImpl implements _HandleSocketEvent {
     TResult Function()? fetchListChat,
     TResult Function(ChatModel chatModel)? newChat,
     TResult Function(String eventName)? subscribeEvent,
+    TResult Function()? cancelEvent,
     TResult Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult Function(ChatModel chatModel)? sendChat,
     required TResult orElse(),
@@ -660,6 +814,7 @@ class _$HandleSocketEventImpl implements _HandleSocketEvent {
     required TResult Function(_FetchListChat value) fetchListChat,
     required TResult Function(_NewChat value) newChat,
     required TResult Function(_ListenSocketEvent value) subscribeEvent,
+    required TResult Function(_CancelEvent value) cancelEvent,
     required TResult Function(_HandleSocketEvent value) handleSocketEvent,
     required TResult Function(_SendChat value) sendChat,
   }) {
@@ -672,6 +827,7 @@ class _$HandleSocketEventImpl implements _HandleSocketEvent {
     TResult? Function(_FetchListChat value)? fetchListChat,
     TResult? Function(_NewChat value)? newChat,
     TResult? Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult? Function(_CancelEvent value)? cancelEvent,
     TResult? Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult? Function(_SendChat value)? sendChat,
   }) {
@@ -684,6 +840,7 @@ class _$HandleSocketEventImpl implements _HandleSocketEvent {
     TResult Function(_FetchListChat value)? fetchListChat,
     TResult Function(_NewChat value)? newChat,
     TResult Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult Function(_CancelEvent value)? cancelEvent,
     TResult Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult Function(_SendChat value)? sendChat,
     required TResult orElse(),
@@ -785,6 +942,7 @@ class _$SendChatImpl implements _SendChat {
     required TResult Function() fetchListChat,
     required TResult Function(ChatModel chatModel) newChat,
     required TResult Function(String eventName) subscribeEvent,
+    required TResult Function() cancelEvent,
     required TResult Function(String eventName, SocketModel data)
         handleSocketEvent,
     required TResult Function(ChatModel chatModel) sendChat,
@@ -798,6 +956,7 @@ class _$SendChatImpl implements _SendChat {
     TResult? Function()? fetchListChat,
     TResult? Function(ChatModel chatModel)? newChat,
     TResult? Function(String eventName)? subscribeEvent,
+    TResult? Function()? cancelEvent,
     TResult? Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult? Function(ChatModel chatModel)? sendChat,
   }) {
@@ -810,6 +969,7 @@ class _$SendChatImpl implements _SendChat {
     TResult Function()? fetchListChat,
     TResult Function(ChatModel chatModel)? newChat,
     TResult Function(String eventName)? subscribeEvent,
+    TResult Function()? cancelEvent,
     TResult Function(String eventName, SocketModel data)? handleSocketEvent,
     TResult Function(ChatModel chatModel)? sendChat,
     required TResult orElse(),
@@ -826,6 +986,7 @@ class _$SendChatImpl implements _SendChat {
     required TResult Function(_FetchListChat value) fetchListChat,
     required TResult Function(_NewChat value) newChat,
     required TResult Function(_ListenSocketEvent value) subscribeEvent,
+    required TResult Function(_CancelEvent value) cancelEvent,
     required TResult Function(_HandleSocketEvent value) handleSocketEvent,
     required TResult Function(_SendChat value) sendChat,
   }) {
@@ -838,6 +999,7 @@ class _$SendChatImpl implements _SendChat {
     TResult? Function(_FetchListChat value)? fetchListChat,
     TResult? Function(_NewChat value)? newChat,
     TResult? Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult? Function(_CancelEvent value)? cancelEvent,
     TResult? Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult? Function(_SendChat value)? sendChat,
   }) {
@@ -850,6 +1012,7 @@ class _$SendChatImpl implements _SendChat {
     TResult Function(_FetchListChat value)? fetchListChat,
     TResult Function(_NewChat value)? newChat,
     TResult Function(_ListenSocketEvent value)? subscribeEvent,
+    TResult Function(_CancelEvent value)? cancelEvent,
     TResult Function(_HandleSocketEvent value)? handleSocketEvent,
     TResult Function(_SendChat value)? sendChat,
     required TResult orElse(),

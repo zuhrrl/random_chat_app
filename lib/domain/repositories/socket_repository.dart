@@ -3,4 +3,6 @@ abstract class SocketRepository {
     required String eventName,
     required Function onReceivedEvent,
   });
+
+  Future<void> cancelEvent();
 }

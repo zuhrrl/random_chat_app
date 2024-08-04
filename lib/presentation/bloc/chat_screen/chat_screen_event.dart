@@ -7,6 +7,7 @@ class ChatScreenEvent with _$ChatScreenEvent {
       _NewChat;
   const factory ChatScreenEvent.subscribeEvent({required String eventName}) =
       _ListenSocketEvent;
+  const factory ChatScreenEvent.cancelEvent() = _CancelEvent;
   const factory ChatScreenEvent.handleSocketEvent(
       {required String eventName,
       required SocketModel data}) = _HandleSocketEvent;

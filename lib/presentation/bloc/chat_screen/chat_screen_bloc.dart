@@ -5,6 +5,7 @@ import 'package:random_chat_app/common/enum/message_type.dart';
 import 'package:random_chat_app/common/utils/common_utils.dart';
 import 'package:random_chat_app/data/model/chat_model.dart';
 import 'package:random_chat_app/data/model/socket_model.dart';
+import 'package:random_chat_app/domain/usecases/cancel_listen_socket_event_usecase.dart';
 import 'package:random_chat_app/domain/usecases/listen_socket_event_usecase.dart';
 import 'package:random_chat_app/presentation/pages/chat_screen/chat_screen.dart';
 
@@ -14,9 +15,11 @@ part 'chat_screen_bloc.freezed.dart';
 
 class ChatScreenBloc extends Bloc<ChatScreenEvent, ChatScreenState> {
   final ListenSocketEventUsecase listenSocketEventUsecase;
+  final CancelListenSocketEventUsecase cancelListenSocketEventUsecase;
 
   ChatScreenBloc({
     required this.listenSocketEventUsecase,
+    required this.cancelListenSocketEventUsecase,
   }) : super(_Initial()) {
     List<ChatModel> listChat = [];
 
@@ -40,6 +43,14 @@ class ChatScreenBloc extends Bloc<ChatScreenEvent, ChatScreenState> {
       emit(ChatScreenState.loading());
       emit(
         await event.when<Future<ChatScreenState>>(
+          cancelEvent: () async {
+            cancelListenSocketEventUsecase.execute();
+            await Future.delayed(Duration(seconds: 1));
+            if (listChat.isEmpty) {
+              return ChatScreenState.empty();
+            }
+            return ChatScreenState.loaded(listChat: List.of(listChat));
+          },
           sendChat: (chatModel) async {
             listChat.add(chatModel);
             return ChatScreenState.loaded(listChat: List.of(listChat));

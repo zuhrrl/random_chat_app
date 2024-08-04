@@ -26,14 +26,16 @@ class InMessageWidget extends StatelessWidget {
           child: Container(
             padding:
                 const EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 5),
-            margin:
-                EdgeInsets.only(top: index == 0 ? 15 : 0, left: 15, bottom: 15),
+            margin: EdgeInsets.only(
+              top: 15,
+              left: 15,
+            ),
             decoration: BoxDecoration(
               color: ColorManager.secondaryColor,
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
-                  bottomLeft: Radius.circular(15)),
+                  bottomRight: Radius.circular(15)),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,

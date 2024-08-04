@@ -19,15 +19,13 @@ class OutMessageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width * 0.65,
+        const Spacer(),
+        Expanded(
           child: Container(
             padding:
                 const EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 5),
-            margin: EdgeInsets.only(
-                top: index == 0 ? 15 : 0, right: 15, bottom: 15),
+            margin: EdgeInsets.only(top: 15, right: 15),
             decoration: BoxDecoration(
               color: ColorManager.primaryColor,
               borderRadius: const BorderRadius.only(
@@ -60,7 +58,7 @@ class OutMessageWidget extends StatelessWidget {
                           color: ColorManager.white,
                           fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Icon(

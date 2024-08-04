@@ -18,4 +18,13 @@ class SocketRepositoryImpl implements SocketRepository {
       Logger().e(err);
     }
   }
+
+  @override
+  Future<void> cancelEvent() async {
+    try {
+      socketDataSource.cancelEvent();
+    } catch (err) {
+      Logger().e(err);
+    }
+  }
 }

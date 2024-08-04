@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:random_chat_app/common/theme/color_manager.dart';
+import 'package:random_chat_app/common/theme/size_manager.dart';
 import 'package:random_chat_app/widgets/text_field_chat_widget.dart';
 
 class BottomSendChatWidget extends StatelessWidget {
@@ -22,7 +23,7 @@ class BottomSendChatWidget extends StatelessWidget {
               //   icon: const Icon(Icons.add),
               // ),
               SizedBox(
-                width: 15,
+                width: SizeManager.marginLeft,
               ),
               Expanded(
                 child: TextFieldChatWidget(controller: controller),
@@ -43,8 +44,8 @@ class BottomSendChatWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 30,
+              SizedBox(
+                width: SizeManager.marginRight,
               )
             ],
           ),

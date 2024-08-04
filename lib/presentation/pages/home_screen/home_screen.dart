@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:random_chat_app/common/theme/color_manager.dart';
 import 'package:random_chat_app/common/theme/size_manager.dart';
 import 'package:random_chat_app/common/theme/text_style_manger.dart';
+import 'package:random_chat_app/presentation/bloc/chat_screen/chat_screen_bloc.dart';
 import 'package:random_chat_app/presentation/bloc/home_screen/home_screen_bloc.dart';
 import 'package:random_chat_app/presentation/pages/chat_screen/chat_screen.dart';
 import 'package:random_chat_app/widgets/circle_image_widget.dart';
@@ -22,23 +23,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void handleSocketEvent() {
-    Future.microtask(
-      () => context.read<HomeScreenBloc>().add(
-            const HomeScreenEvent.subscribeEvent(
-              eventName: 'general',
-            ),
-          ),
-    );
-  }
-
   @override
   void initState() {
     super.initState();
     Future.microtask(() {
-      handleSocketEvent();
-      context.read<HomeScreenBloc>().add(
-            const HomeScreenEvent.fetchTask(),
+      context.read<ChatScreenBloc>().add(
+            const ChatScreenEvent.subscribeEvent(eventName: 'general'),
           );
     });
   }

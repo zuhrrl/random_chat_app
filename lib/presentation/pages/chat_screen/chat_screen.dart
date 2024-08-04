@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:random_chat_app/common/enum/message_type.dart';
 import 'package:random_chat_app/common/theme/color_manager.dart';
+import 'package:random_chat_app/common/theme/size_manager.dart';
 import 'package:random_chat_app/common/theme/text_style_manger.dart';
 import 'package:random_chat_app/common/utils/common_utils.dart';
 import 'package:random_chat_app/data/model/chat_model.dart';
@@ -46,6 +47,11 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -81,21 +87,29 @@ class _ChatScreenState extends State<ChatScreen> {
               subscribeSocketEvent: () => PrimaryLoadingWidget(),
               initial: () => PrimaryLoadingWidget(),
               loading: () => PrimaryLoadingWidget(),
-              loaded: (listChat) {
-                return ListView.builder(
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  controller: chatScrollController,
-                  itemCount: listChat.length,
-                  itemBuilder: (context, index) {
-                    var chat = listChat[index];
-                    return ItemChatWidget(
-                      messageBubbleType: chat.message_bubble_type,
-                      message: chat.message!,
-                      index: index,
-                      isRead: chat.isRead,
-                    );
-                  },
+              loaded: (data) {
+                var listChat = data.reversed.toList();
+                return Container(
+                  margin: EdgeInsets.only(
+                    top: SizeManager.marginTop,
+                    bottom: SizeManager.marginBottom,
+                  ),
+                  child: ListView.builder(
+                    reverse: true,
+                    shrinkWrap: true,
+                    physics: const ScrollPhysics(),
+                    controller: chatScrollController,
+                    itemCount: listChat.length,
+                    itemBuilder: (context, index) {
+                      var chat = listChat[index];
+                      return ItemChatWidget(
+                        messageBubbleType: chat.message_bubble_type,
+                        message: chat.message!,
+                        index: index,
+                        isRead: chat.isRead,
+                      );
+                    },
+                  ),
                 );
               },
               empty: () => Center(
@@ -117,6 +131,9 @@ class _ChatScreenState extends State<ChatScreen> {
         child: BottomSendChatWidget(
           controller: chatController,
           onMessageSend: () {
+            if (chatController.text.isEmpty) {
+              return;
+            }
             var chat = ChatModel(
               id: Random.secure().nextInt(10).toString(),
               channel: 'channel',
