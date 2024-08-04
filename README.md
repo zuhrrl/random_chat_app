@@ -1,20 +1,26 @@
-# random_chat_app
+# Random Chat App
 
-A new Flutter project.
+A multi-platform (iOS and Android) chat application built using Flutter, following Clean Architecture principles, abstraction layers, Test-Driven Development (TDD), and BLoC for state management. The chat functionality is powered by **Socket.IO** for real-time communication.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Random chat functionality (one-on-one conversations)
+- Real-time messaging using **Socket.IO**
+- Multi-platform: Runs on both iOS and Android
+- Clean Architecture: Separation of concerns using domain, data, and presentation layers
+- Fully decoupled codebase using abstractions and interfaces
+- Test-Driven Development (TDD) approach
+- **State Management using BLoC**: Efficient and scalable state management
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+- **Flutter**: Latest version of Flutter for cross-platform development
+- **Dart**: Dart programming language for Flutter development
+- **Clean Architecture**: Separation of business logic, data sources, and UI components
+- **Abstractions**: Interfaces for decoupled components (repositories, services)
+- **TDD**: Test-Driven Development for writing tests before code implementation
+- **BLoC Pattern**: For efficient and scalable state management
+- **Socket.IO**: For real-time messaging in the chat functionality
 
 ## Socket Parameter
 
@@ -22,10 +28,14 @@ To post a socket message, you need to connect to Socket.io and then post with th
 
 ```
 {
-  "channel": "general",
-  "message_to": "zuhrrlanam@gmail.com",
-  "message_from": "postman",
-  "message": "your message",
-  "data": int | string | object
+    "id": "test123",
+    "channel": "general",
+    "message_to": "zuhrrlanam@gmail.com",
+    "message_from": "postman@gmail.com",
+    "message": "Haloww ajaksdjflk",
+    "message_type": "text",
+    "data": {
+        "data": "coba coba aja"
+    }
 }
 ```

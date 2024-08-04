@@ -1,12 +1,9 @@
-import 'dart:io';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:logger/web.dart';
 import 'package:random_chat_app/data/model/socket_model.dart';
 import 'package:random_chat_app/data/model/task.dart';
-import 'package:socket_io_client/socket_io_client.dart' as socketio;
 import 'package:random_chat_app/domain/usecases/listen_socket_event_usecase.dart';
 
 part 'home_screen_event.dart';
@@ -20,7 +17,7 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
   HomeScreenBloc({required this.listenSocketEventUsecase})
       : super(const HomeScreenState.initial()) {
     on<HomeScreenEvent>((event, emit) async {
-      emit(HomeScreenState.loading());
+      emit(const HomeScreenState.loading());
       emit(
         await event.when<Future<HomeScreenState>>(
           subscribeEvent: (eventName) async {
@@ -41,7 +38,7 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
                 allTask: List.of(allTask), socketData: data);
           },
           fetchTask: () async {
-            await Future.delayed(Duration(seconds: 3), () {
+            await Future.delayed(const Duration(seconds: 3), () {
               allTask.add(
                 Task(
                     id: 1,
